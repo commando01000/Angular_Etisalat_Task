@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { ChartComponent } from 'ng-ApexCharts';
+import { ChartComponent } from 'ng-apexcharts';
 
 import {
   ApexNonAxisChartSeries,
   ApexResponsive,
   ApexChart,
-} from 'ng-ApexCharts';
+} from 'ng-apexcharts';
 import { Albums } from 'src/app/interfaces/Albums';
 import { UserService } from 'src/app/Services/user.service';
 
