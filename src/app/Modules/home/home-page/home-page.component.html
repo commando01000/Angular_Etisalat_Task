@@ -1,0 +1,54 @@
+<section id="header">
+  <!-- This section is the header of the Home Page -->
+  <main class="container-fluid w-100 h-100">
+    <div class="greeting-user w-75 m-auto">
+      <!-- This div is for the greeting of the user -->
+      <div class="user-details mt-3 pt-4">
+        <!-- This span is for the greeting of the user -->
+        <span class="text-white fs-4">Hi, {{ userName }}</span>
+      </div>
+    </div>
+    <br />
+    <div class="search-post d-flex flex-row w-75 m-auto">
+      <!-- This div is for the search input and the dropdown -->
+      <div class="dropdown mt-1 pe-3">
+        <!-- This button is for the dropdown -->
+        <button
+          class="btn btn-light dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- This is the default text for the dropdown -->
+          {{ defaultSearchKey }}
+        </button>
+        <ul class="dropdown-menu">
+          <!-- These links are for the options in the dropdown -->
+          <li>
+            <a class="dropdown-item" (click)="changeDropdownStatus()"
+              >AlbumID</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" (click)="changeDropdownStatus()">JobID</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-3 w-100">
+        <!-- This input is for the search functionality -->
+        <input
+          type="text"
+          class="form-control search-post rounded-4"
+          name="searchPost"
+          id="searchPost"
+          [(ngModel)]="searchPost"
+          (keyup)="getPostDetails()"
+          placeholder=" Search ..."
+        />
+      </div>
+    </div>
+  </main>
+</section>
+<app-post-details></app-post-details>
+<app-recent-activities></app-recent-activities>

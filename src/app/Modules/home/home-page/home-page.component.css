@@ -1,0 +1,15 @@
+#header {
+  height: 200px;
+}
+
+#header .container-fluid {
+  background: linear-gradient(to right, black, #8b0000);
+}
+
+.search-post {
+  height: 50px;
+}
+
+#chart {
+  padding: 0;
+}

@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <main class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <img
+        src="./assets/images/ET_Logo.png"
+        class="logo mx-1 w-100"
+        alt="Etisalat"
+      />
+    </a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto ms-3 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/home"
+            routerLinkActive="active"
+            aria-current="page"
+            >Home <span class="visually-hidden"></span
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active">My Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active">SPOCs</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="dropdownId"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >Dropdown</a
+                    >
+                    <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownId"
+                    >
+                        <a class="dropdown-item" href="#"
+                            >Action 1</a
+                        >
+                        <a class="dropdown-item" href="#"
+                            >Action 2</a
+                        >
+                    </div>
+                </li> -->
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link">
+            <button
+              type="button"
+              class="btn btn-outline-dark rounded-5 ps-3 pe-3"
+            >
+              Download Samples
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <button type="button" class="btn btn-danger rounded-5 ps-3 pe-3">
+              <span><i class="fa-solid fa-plus p-1 white-circle"></i></span>
+              Create Batch
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <img
+              src="./assets/images/user.jpg"
+              class="user-image rounded-5 red-circle"
+              alt="User"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</nav>

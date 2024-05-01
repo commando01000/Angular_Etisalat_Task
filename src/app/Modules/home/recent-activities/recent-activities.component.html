@@ -1,0 +1,42 @@
+<section id="recent-activities" class="mt-5 pt-5">
+  <main class="container">
+    <div class="row flex-row gy-4">
+      <h4>Recent Activities</h4>
+      <div class="col-md-3" *ngFor="let album of albums">
+        <div class="card shadow rounded-4">
+          <div class="card-header d-flex justify-content-between">
+            <div class="album-id">
+              <p class="fw-bold">{{ album?.id }}</p>
+            </div>
+            <div class="dropdown">
+              <i
+                class="fa-solid fa-ellipsis-vertical settings-dots"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></i>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                    (click)="deleteAlbum(album?.id)"
+                    >Delete</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>
+              <span><i class="fa-regular fa-copy"></i></span> {{ album?.title }}
+            </p>
+          </div>
+          <div class="card-footer">
+            <p class="small">Last Edited 5/01/2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
