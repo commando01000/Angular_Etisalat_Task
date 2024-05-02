@@ -1,7 +1,11 @@
 <section id="recent-activities" class="mt-5 pt-5">
   <main class="container">
     <div class="row flex-row gy-4">
-      <h4>Recent Activities</h4>
+      <h4 class="position-relative">
+        Recent Activities
+        <div class="line position-absolute"></div>
+      </h4>
+
       <div class="col-md-3" *ngFor="let album of albums">
         <div class="card shadow rounded-4">
           <div class="card-header d-flex justify-content-between">
