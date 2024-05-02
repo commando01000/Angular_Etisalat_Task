@@ -7,6 +7,7 @@ import {
   ApexChart,
 } from 'ng-apexcharts';
 import { Albums } from 'src/app/interfaces/Albums';
+import { AlbumService } from 'src/app/Services/album.service';
 import { UserService } from 'src/app/Services/user.service';
 
 /**
@@ -62,7 +63,10 @@ export class PostDetailsComponent {
    */
   post: any = '';
 
-  constructor(private UserService: UserService) {
+  constructor(
+    private UserService: UserService,
+    private AlbumService: AlbumService
+  ) {
     /**
      * Initialize the chart options
      */
@@ -86,19 +90,31 @@ export class PostDetailsComponent {
         },
       ],
     };
+    this.AlbumService.post.subscribe({
+      next: (response: any) => {
+        // console.log('searchPost From post-details ', response);
+
+        this.defaultPost = response;
+        this.getAlbumDetails();
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
   ngOnInit(): void {
     /**
      * Get the default album details
      */
-    this.getDefaultAlbumDetails();
+    this.getAlbumDetails();
   }
-  getDefaultAlbumDetails() {
-    console.log(this.searchPost);
+  getAlbumDetails() {
     /**
      * Get the album details of the default post
      */
-    this.UserService.getAlbumDetails(this.defaultPost).subscribe({
+    // console.log("Hitted", this.defaultPost);
+    
+    this.AlbumService.getAlbumDetails(this.defaultPost).subscribe({
       next: (response: any) => {
         /**
          * Assign the response to the posts list
@@ -108,6 +124,7 @@ export class PostDetailsComponent {
          * Assign the second object of the response to the post field
          */
         this.post = response[1];
+        // console.log('From post-details');
       },
       error: (error) => {
         console.log(error);

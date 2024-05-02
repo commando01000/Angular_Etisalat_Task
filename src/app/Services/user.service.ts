@@ -10,14 +10,4 @@ export class UserService {
       `https://jsonplaceholder.typicode.com/posts/${id}/comments`
     );
   }
-  getAlbumDetails(id: number) {
-    return this._http.get(`https://jsonplaceholder.typicode.com/albums/${id}/photos`);
-  }
-  getAlbums(id: number) {
-    return this._http.get(`https://jsonplaceholder.typicode.com/users/${id}/albums`);
-  }
-  deleteAlbum(id:number)
-  {
-    return this._http.delete(`https://jsonplaceholder.typicode.com/albums/${id}`)
-  }
 }

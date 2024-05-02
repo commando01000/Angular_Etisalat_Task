@@ -2,6 +2,7 @@ import { Users } from 'src/app/interfaces/Users';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../../Services/user.service';
 import { Albums } from 'src/app/interfaces/Albums';
+import { AlbumService } from 'src/app/Services/album.service';
 
 /**
  * Home page component
@@ -44,7 +45,7 @@ export class HomePageComponent implements OnInit {
    * Constructor
    * @param UserService
    */
-  constructor(private UserService: UserService) {}
+  constructor(private UserService: UserService, private AlbumService: AlbumService) {}
 
   /**
    * Method called after the view is initialized
@@ -99,7 +100,7 @@ export class HomePageComponent implements OnInit {
     /**
      * Get the album details of the default post
      */
-    this.UserService.getAlbumDetails(this.defaultPost).subscribe({
+    this.AlbumService.getAlbumDetails(this.defaultPost).subscribe({
       next: (response: any) => {
         /**
          * Assign the response to the posts list
@@ -124,22 +125,9 @@ export class HomePageComponent implements OnInit {
     /**
      * Get the album details of the given post
      */
-    this.UserService.getAlbumDetails(this.searchPost).subscribe({
-      next: (response: any) => {
-        /**
-         * Assign the response to the posts list
-         */
-        this.posts = response[0];
-        /**
-         * Assign the second object of the response to the post field
-         */
-        this.post = response[1];
-      },
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {},
-    });
+    console.log(this.searchPost);
+
+    this.AlbumService.post.next(this.searchPost);
   }
 
   /**
